@@ -1,0 +1,296 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* --- Header --- */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.6);
+    margin-bottom: 15px;
+}
+
+
+.header--logo > span {
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 0.15em;
+    padding: 1em;
+}
+
+/* --- Navbar --- */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgb(240, 240, 240);
+}
+
+.toolbar{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1em 3em;
+    max-width: 1100px;
+}
+
+.toolbar--searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid gray;
+    border-radius: 10px;
+    position: relative;
+    width: 50%;
+    background-color: gray;
+}
+
+.searchbar--search_input, .searchbar--search_button{
+    outline: none;
+    border: none;
+    height: 50px;
+}
+
+.searchbar--search_input{
+    width: 100%;
+    padding-left: 1em;
+    font-size: 21px;
+    border-radius: 10px;
+}
+
+.searchbar--search_input:focus{
+    outline: 2px solid  black;
+}
+
+.searchbar--search_button{
+    background-color: gray;
+    width: 50px;
+    cursor: pointer;
+}
+
+.searchbar--search_button:hover > i{
+    color: black;
+    transition: 0.1s ease-in;
+}
+
+.fa-search {
+    color: white;
+}
+
+.toolbar--competitions{
+    font-size: 1.3em;
+}
+
+.arrow {
+    border: solid gray;
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    padding: 5px;
+    margin-left: 0.5em;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    border: solid black;
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    padding: 5px;
+    margin-left: 0.5em;
+    cursor: pointer;
+}
+
+
+.up {
+    transform: rotate(225deg) translateY(-10px);
+    -webkit-transform: rotate(225deg) translateY(-5px) translateX(-5px);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg)
+}
+
+.competition--container {
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.competition--item, .toolbar--refresh {
+    background-color: white;
+    padding: 10px;
+    font-size: 0.8rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.toolbar--refresh {
+    font-size: 1rem;
+    padding: 7px 14px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+.toolbar--refresh > i {
+    margin-right: 5px;
+}
+
+.competition--item:hover, .toolbar--refresh:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.visable {
+    display: flex;
+}
+
+.invisable {
+    display: none;
+}
+
+/* --- Match Highlight Design --- */
+
+.match {
+    max-width: 800px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 10px auto;
+    padding: 2em;
+}
+
+.match--title {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 0.1em;
+    margin: 0.25em;
+    font-size: 2em;
+}
+
+.match--competition{
+    color: gray;
+}
+
+.match--video {
+    margin-top: 1em;
+}
+
+.content {
+    overflow: hidden;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* --- Loading animation --- */
+
+.loading {
+	opacity: 0;
+	display: flex;
+	position: fixed;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: opacity .3s ease-in;
+}
+
+.loading.show {
+	opacity: 1;
+}
+
+.ball {
+	background-color: white;
+	border-radius: 50%;
+	margin: 5px;
+	height: 10px;
+	width: 10px;
+	animation: jump .5s ease-in infinite;
+}
+
+.ball:nth-of-type(2) {
+	animation-delay: 0.1s;
+}
+
+.ball:nth-of-type(3) {
+	animation-delay: 0.2s;
+}
+.ball:nth-of-type(4) {
+	animation-delay: 0.3s;
+}
+
+.ball:nth-of-type(5) {
+	animation-delay: 0.4s;
+}
+
+@keyframes jump {
+	0%, 100% {
+		transform: translateY(0);
+	}
+	
+	50% {
+		transform: translateY(-15px);
+	}
+}
+
+/* --- Media Queries --- */
+
+@media only screen and (max-width: 600px) {
+    .toolbar {
+        flex-direction: column;
+        gap: 0.5em;
+        padding: 0.5em;
+    }
+
+    .header--logo > span {
+        font-size: 1.2rem;
+    }
+
+    .toolbar--searchbar {
+        width: 90%;
+    }
+
+    .searchbar--search_button, .searchbar--search_input {
+        height: 30px;
+    }
+
+    .match {
+        padding: 0.5em 1em;
+    }
+
+    .match--title {
+        font-size: 1.5rem;
+    }
+
+    .toolbar--competitions {
+        font-size: 1.1rem;
+    }
+    
+    .arrow {
+        border-width: 0 10px 10px 0;
+        padding: 4px;
+    }
+
+    .competition--item {
+        font-size: 0.6em;
+        padding: 0.7em;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .header--logo > i {
+        display: none;
+    }
+}

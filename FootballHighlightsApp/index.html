@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>FootballHighlights</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header--logo">
+            <i class="fa fa-soccer-ball-o" style="font-size: 200%"></i>
+            <span>FootballHighlights</span>
+            <i class="fa fa-soccer-ball-o" style="font-size: 200%"></i>
+        </div>
+    </header>
+
+    <section>
+        <div class="navbar">
+            <div class="toolbar">
+                <button class="toolbar--refresh" id="toolbar--refresh">
+                    <i class="fa fa-arrow-left"></i>Go Home
+                </button>
+                <div class="toolbar--searchbar">      
+                    <button class="searchbar--search_button" id="searchbar--search_button">
+                        <i class="fa fa-search fa-2x"></i>
+                    </button>
+                    <input class="searchbar--search_input" id="searchbar--search_input" type="search">   
+                </div>
+                <p class="toolbar--competitions">Competitions: <i class="arrow down" id="competition--arrow"></i></p>
+            </div>
+            <div class="competition--container invisable" id="competition--container">
+                <!-- Competition Items -->
+            </div>
+        </div>
+        
+        <div class="content" id="content">
+            <!-- Video Items -->        
+        </div>
+    </section>
+
+    <div class="loading">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+    </div>
+    
+<script defer  type="text/javascript" src="index.js"></script>
+</body>
+</html>
