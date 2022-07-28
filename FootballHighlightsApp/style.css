@@ -195,7 +195,7 @@ body {
     border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* --- Loading animation --- */
+/* --- loading animation --- */
 
 .loading {
 	opacity: 0;
@@ -247,7 +247,7 @@ body {
 
 /* --- Media Queries --- */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     .toolbar {
         flex-direction: column;
         gap: 0.5em;
@@ -259,7 +259,7 @@ body {
     }
 
     .toolbar--searchbar {
-        width: 90%;
+        width: 70%;
     }
 
     .searchbar--search_button, .searchbar--search_input {
@@ -289,8 +289,12 @@ body {
     }
 }
 
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 480px) {
     .header--logo > i {
         display: none;
+    }
+
+    .toolbar--searchbar {
+        width: 90%;
     }
 }
